@@ -1,0 +1,57 @@
+﻿namespace Calculadora_v2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        public int valor1, valor2;
+        public string operacao = string.Empty;
+
+        private void btn_div_Click(object sender, EventArgs e)
+        {
+            valor1 = int.Parse(textval1.Text);
+            valor2 = int.Parse(textval2.Text);
+            operacao = "DIV";
+        }
+        private void btn_mult_Click(object sender, EventArgs e)
+        {
+            valor1 = int.Parse(textval1.Text);
+            valor2 = int.Parse(textval2.Text);
+            operacao = "MULT";
+        }
+
+        private void btn_sub_Click(object sender, EventArgs e)
+        {
+            valor1 = int.Parse(textval1.Text);
+            valor2 = int.Parse(textval2.Text);
+            operacao = "SUB";
+        }
+
+        private void btn_soma_Click(object sender, EventArgs e)
+        {
+            valor1 = int.Parse(textval1.Text);
+            valor2 = int.Parse(textval2.Text);
+            operacao = "SOMA";
+        }
+
+        private void btn_result_Click(object sender, EventArgs e)
+        {
+            if (operacao.Equals("SOMA"))
+                textresult.Text = Convert.ToString(valor1 + valor2);
+            else if (operacao.Equals("SUB"))
+                textresult.Text = Convert.ToString(valor1 - valor2);
+            else if (operacao.Equals("MULT"))
+                textresult.Text = Convert.ToString(valor1 * valor2);
+            else
+                textresult.Text = Convert.ToString(valor1 / valor2);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
